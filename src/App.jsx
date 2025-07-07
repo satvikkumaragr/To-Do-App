@@ -1,4 +1,3 @@
-import React from "react";
 import AddTodo from "./components/AddTodo.jsx";
 import Todo from "./components/Todo";
 

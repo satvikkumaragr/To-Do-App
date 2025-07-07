@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeTodo } from "../features/todo/todoSlice";
 
@@ -7,17 +6,23 @@ export default function Todo() {
   const dispatch = useDispatch();
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <div className="text-lg sm:text-xl md:text-2xl font-bold text-center items-center text-indigo-400 mb-4 sm:mb-6 tracking-wide">Todos</div>
+      <div className="text-lg sm:text-xl md:text-2xl font-bold text-center items-center text-indigo-400 mb-4 sm:mb-6 tracking-wide">
+        Todos
+      </div>
       <ul className="list-none w-full max-w-full sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto flex flex-col gap-3 sm:gap-4 px-2 sm:px-0">
         {todos.length === 0 ? (
-          <li className="text-center text-gray-400 py-6 sm:py-8 bg-zinc-900 rounded-lg sm:rounded-xl shadow-inner text-sm sm:text-base">No todos yet. Add one above!</li>
+          <li className="text-center text-gray-400 py-6 sm:py-8 bg-zinc-900 rounded-lg sm:rounded-xl shadow-inner text-sm sm:text-base">
+            No todos yet. Add one above!
+          </li>
         ) : (
           todos.map((todo) => (
             <li
               className="flex flex-col sm:flex-row justify-between items-center bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-800 px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 group"
               key={todo.id}
             >
-              <div className="text-white text-sm sm:text-base md:text-lg font-medium break-words w-full sm:w-auto text-center sm:text-left mb-2 sm:mb-0">{todo.text}</div>
+              <div className="text-white text-sm sm:text-base md:text-lg font-medium break-words w-full sm:w-auto text-center sm:text-left mb-2 sm:mb-0">
+                {todo.text}
+              </div>
               <button
                 onClick={() => dispatch(removeTodo(todo.id))}
                 className="flex items-center gap-2 text-white bg-gradient-to-r from-red-500 to-pink-500 border-0 py-2 px-4 sm:px-5 focus:outline-none hover:from-red-600 hover:to-pink-600 rounded-lg text-sm sm:text-base font-semibold shadow transition-all duration-200 mt-1 sm:mt-0"
